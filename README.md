@@ -1,125 +1,122 @@
-Chatbot Interativo com Questionário e Relatórios
+# Chatbot Interativo com Questionário e Relatórios
 
 Este é um projeto de um chatbot interativo construído com Streamlit, que permite aos usuários responderem a um questionário e fornece recursos adicionais, como autenticação de usuários, geração de relatórios e análise de dados. O aplicativo foi projetado para oferecer uma experiência única de interface de chat utilizando o componente st.chat_message.
 
-Funcionalidades Principais
+## Funcionalidades Principais
 
-Autenticação de Usuários
+1. Autenticação de Usuários
 
-Login seguro com verificação de credenciais.
+- Login seguro com verificação de credenciais.
 
-Registro de novos usuários.
+- Registro de novos usuários.
 
-Acesso administrativo para visualizar relatórios.
+- Acesso administrativo para visualizar relatórios.
 
-Upload de Questionários
+2. Upload de Questionários
 
-Permite o upload de arquivos JSON contendo perguntas e opções.
+- Permite o upload de arquivos JSON contendo perguntas e opções.
 
-Valida a estrutura do JSON para evitar erros.
+- Valida a estrutura do JSON para evitar erros.
 
-Exibição Interativa de Perguntas
+3. Exibição Interativa de Perguntas
 
-Utiliza o st.chat_message para exibir perguntas e capturar respostas do usuário em um formato de chat.
+- Utiliza o st.chat_message para exibir perguntas e capturar respostas do usuário em um formato de chat.
 
-Geração de Relatórios
+4. Geração de Relatórios
 
-Gera estatísticas sobre o desempenho dos usuários.
+- Gera estatísticas sobre o desempenho dos usuários.
 
-Exibe gráficos de distribuição de pontuações.
+- Exibe gráficos de distribuição de pontuações.
 
-Mostra o histórico de respostas em uma tabela interativa.
+- Mostra o histórico de respostas em uma tabela interativa.
 
-Segurança
+5. Segurança
 
-Respostas criptografadas antes de serem armazenadas no banco de dados.
+- Respostas criptografadas antes de serem armazenadas no banco de dados.
 
-Estrutura do Projeto
+## Estrutura do Projeto
 
-Principais Arquivos
+### Principais Arquivos
 
-app.py: Arquivo principal que executa o chatbot.
+- app.py: Arquivo principal que executa o chatbot.
 
-quiz.db: Banco de dados SQLite utilizado para armazenar perguntas, respostas e usuários.
+- quiz.db: Banco de dados SQLite utilizado para armazenar perguntas, respostas e usuários.
 
-encryption.key: Chave para criptografia de respostas.
+- encryption.key: Chave para criptografia de respostas.
 
-Tabelas no Banco de Dados
+1. Tabelas no Banco de Dados
 
-questions: Armazena as perguntas do questionário.
+- questions: Armazena as perguntas do questionário.
 
-id: Identificador único da pergunta.
+- id: Identificador único da pergunta.
 
-text: Texto da pergunta.
+- text: Texto da pergunta.
 
-type: Tipo de pergunta ("aberta", "verdadeiro_falso", "multipla_escolha").
+- type: Tipo de pergunta ("aberta", "verdadeiro_falso", "multipla_escolha").
 
-options: Opções de resposta (JSON).
+- options: Opções de resposta (JSON).
 
-correct_answer: Resposta correta.
+- correct_answer: Resposta correta.
 
-responses: Armazena as respostas dos usuários.
+2. responses: Armazena as respostas dos usuários.
 
-id: Identificador único da resposta.
+- id: Identificador único da resposta.
 
-user: Nome do usuário.
+- user: Nome do usuário.
 
-score: Pontuação do usuário.
+- score: Pontuação do usuário.
 
-total_questions: Total de perguntas do questionário.
+- total_questions: Total de perguntas do questionário.
 
-responses: Respostas do usuário (criptografadas).
+- responses: Respostas do usuário (criptografadas).
 
-timestamp: Data e hora da resposta.
+- timestamp: Data e hora da resposta.
 
-users: Armazena as credenciais dos usuários.
+3. users: Armazena as credenciais dos usuários.
 
-username: Nome de usuário (chave primária).
+- username: Nome de usuário (chave primária).
 
-password: Senha do usuário.
+- password: Senha do usuário.
 
-Configuração e Execução
+## Configuração e Execução
 
-Requisitos
+### Requisitos
 
-Python 3.8 ou superior
+1. Python 3.8 ou superior
 
-Bibliotecas:
+2. Bibliotecas:
 
-streamlit
+- streamlit
 
-cryptography
+- cryptography
 
-sqlite3 (nativo do Python)
+- sqlite3 (nativo do Python)
 
-pandas
+- pandas
 
-matplotlib
+- matplotlib
 
-Instalação
+## Instalação
 
-Clone o repositório:
-
-git clone https://github.com/seu-repositorio/chatbot-quiz.git
-cd chatbot-quiz
-
-Crie um ambiente virtual:
+1. Crie um ambiente virtual:
 
 python -m venv venv
-source venv/bin/activate  # No Windows: venv\Scripts\activate
 
-Instale as dependências:
+source venv/bin/activate  # No Windows: venv\Scripts\activate 
 
-pip install -r requirements.txt
+2. Instale as dependências:
 
-Execute o aplicativo:
+pip install -r requirements.txt 
+
+3. Execute o aplicativo:
 
 streamlit run app.py
 
-Formato do Arquivo JSON
+## Formato do Arquivo JSON
 
 O arquivo JSON para o upload do questionário deve seguir este formato:
 
+```json
 {
   "perguntas": [
     {
@@ -162,36 +159,39 @@ O arquivo JSON para o upload do questionário deve seguir este formato:
   ]
 }
 
-Funções Principais
+```
 
-Login
 
-Usuário: Insira seu nome de usuário e senha para acessar.
+## Funções Principais
 
-Registro: Registre um novo usuário diretamente na interface.
+1. Login
 
-Questionário
+- Usuário: Insira seu nome de usuário e senha para acessar.
 
-Perguntas exibidas em formato de chat.
+- Registro: Registre um novo usuário diretamente na interface.
 
-Avanço automático após o envio de cada resposta.
+2. Questionário
 
-Estatísticas (Acesso Administrador)
+- Perguntas exibidas em formato de chat.
 
-Visualize métricas de uso e desempenho.
+- Avanço automático após o envio de cada resposta.
 
-Exiba histórico de respostas e gráficos.
+3. Estatísticas (Acesso Administrador)
 
-Possíveis Melhorias Futuras
+- Visualize métricas de uso e desempenho.
 
-Adicionar suporte a temas customizáveis.
+- Exiba histórico de respostas e gráficos.
 
-Implementar métodos de autenticação mais robustos, como OAuth.
+## Possíveis Melhorias Futuras
 
-Permitir exportação de relatórios em diferentes formatos (CSV, Excel).
+- Adicionar suporte a temas customizáveis.
 
-Melhorar o design da interface com estilos mais personalizados.
+- Implementar métodos de autenticação mais robustos, como OAuth.
 
-Contribuições
+- Permitir exportação de relatórios em diferentes formatos (CSV, Excel).
+
+- Melhorar o design da interface com estilos mais personalizados.
+
+## Contribuições
 
 Contribuições são bem-vindas! Por favor, envie um pull request ou abra uma issue com sugestões e melhorias.
