@@ -1,0 +1,28 @@
+[
+    {
+        "responses": {
+            "0": "paris",
+            "1": "leonardo da vinci",
+            "2": "1969",
+            "3": "5",
+            "4": "verdadeiro",
+            "5": "s\u00e3o paulo"
+        },
+        "score": 6,
+        "total_questions": 6,
+        "timestamp": "2024-12-15 23:28:37"
+    },
+    {
+        "responses": {
+            "0": "paris",
+            "1": "leonardo da vinci",
+            "2": "1969",
+            "3": "5",
+            "4": "verdadeiro",
+            "5": "s\u00e3o paulo"
+        },
+        "score": 6,
+        "total_questions": 6,
+        "timestamp": "2024-12-15 23:28:39"
+    }
+]

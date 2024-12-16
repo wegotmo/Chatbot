@@ -1,0 +1,6 @@
+{
+    "errors": [
+        "O arquivo JSON deve conter uma chave 'perguntas' com uma lista de perguntas."
+    ],
+    "timestamp": "2024-12-16 01:42:38.980243"
+}
